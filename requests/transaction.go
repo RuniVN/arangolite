@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"regexp"
-	"strings"
 )
 
 // Transaction represents an ArangoDB transaction.
@@ -56,7 +55,7 @@ func (t *Transaction) Bind(name string, value interface{}) *Transaction {
 		t.bindVars = make(map[string]string)
 	}
 	m, _ := json.Marshal(value)
-	t.bindVars[name] = strings.Replace(string(m), `"`, "'", -1)
+	t.bindVars[name] = string(m)
 	return t
 }
 

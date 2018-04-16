@@ -5,7 +5,7 @@ import (
 
 	"encoding/json"
 
-	"github.com/solher/arangolite/requests"
+	"github.com/RuniVN/arangolite/requests"
 )
 
 const indentedQuery = `
